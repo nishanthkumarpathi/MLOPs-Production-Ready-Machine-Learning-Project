@@ -1,0 +1,7 @@
+{
+    "name": "MLOpsBappy",
+    "dockerComposeFile": ["docker-compose.yml"],
+    "service": "development",
+    "shutdownAction": "stopCompose",
+    "workspaceFolder": "/workspace"
+}
