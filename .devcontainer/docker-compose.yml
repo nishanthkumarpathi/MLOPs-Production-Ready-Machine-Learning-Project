@@ -9,17 +9,20 @@ services:
       - ..:/workspace:cached
     command: sleep infinity
 
-  mongodb:
-    image: mongo:latest
+  mongodb-server:
+    image: mongodb/mongodb-community-server:latest
     hostname: mongodb-server
-    container_name: mongodb
+    container_name: mongodb-server
+    restart: unless-stopped
     ports:
       - "27017:27017"
     volumes:
       - mongodb:/data/db
-    # Load from .env file
     env_file:
       - .env
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
     depends_on:
       - development
 
