@@ -26,5 +26,7 @@
             }
         }
     },
+    // This Requirements.txt file is from the root folder, not from devcontainer folder
+    // This is used to install the us_visa packages.
     "postCreateCommand": "pip install -r requirements.txt"
 }
