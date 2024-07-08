@@ -4,17 +4,22 @@ services:
       context: .
       dockerfile: Dockerfile.development
     container_name: development
+    hostname: py-dev-container
     volumes:
       - ..:/workspace:cached
     command: sleep infinity
 
   mongodb:
     image: mongo:latest
+    hostname: mongodb-server
     container_name: mongodb
     ports:
       - "27017:27017"
     volumes:
       - mongodb:/data/db
+    # Load from .env file
+    env_file:
+      - .env
     depends_on:
       - development
 
