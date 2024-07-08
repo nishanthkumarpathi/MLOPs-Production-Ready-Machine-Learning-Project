@@ -3,5 +3,22 @@
     "dockerComposeFile": ["docker-compose.yml"],
     "service": "development",
     "shutdownAction": "stopCompose",
-    "workspaceFolder": "/workspace"
+    "workspaceFolder": "/workspace",
+    "portsAttributes": {
+        "8888": {
+            "label": "Application",
+            "onAutoForward": "notify"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python"
+            }
+        }
+    }
 }
