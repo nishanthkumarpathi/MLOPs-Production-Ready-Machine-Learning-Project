@@ -7,6 +7,8 @@ services:
     hostname: py-dev-container
     volumes:
       - ..:/workspace:cached
+    env_file:
+      - .env
     command: sleep infinity
 
   mongodb-server:
