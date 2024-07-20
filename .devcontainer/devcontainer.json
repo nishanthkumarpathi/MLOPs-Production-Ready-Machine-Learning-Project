@@ -19,7 +19,8 @@
                 "ms-python.python",
                 "ms-toolsai.jupyter",
                 "mongodb.mongodb-vscode",
-                "mechatroner.rainbow-csv"
+                "mechatroner.rainbow-csv",
+                "Gruntfuggly.todo-tree"
             ],
             "settings": {
                 "python.defaultInterpreterPath": "/usr/local/bin/python"

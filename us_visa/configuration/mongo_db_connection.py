@@ -28,8 +28,13 @@ class MongoDBClient:
                 if mongo_db_url is None:
                     raise Exception(
                         f"Environment key: {MONGODB_URL_KEY} is not set.")
+                # MongoDBClient.client = pymongo.MongoClient(
+                #     mongo_db_url, tlsCAFile=ca)
+                # As per the Video, the above code is using tlsCAFile, because MongoDB Atlas is using TLS/SSL
+                # However in my case, i am using local MongoDB Container.
+                # TODO: Check if the above code is working with local MongoDB container
                 MongoDBClient.client = pymongo.MongoClient(
-                    mongo_db_url, tlsCAFile=ca)
+                    mongo_db_url)
             self.client = MongoDBClient.client
             self.database = self.client[database_name]
             self.database_name = database_name
